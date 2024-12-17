@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom'
 
 function ArticleCard({ article }) {
   return (
@@ -12,6 +13,7 @@ function ArticleCard({ article }) {
       <p>By: {article.author}</p>
       <p>Topic: {article.topic}</p>
       <p>Votes: {article.votes}</p>
+      <Link to={`/articles/${article.article_id}`}>Read more</Link>
     </div>
   );
 }
