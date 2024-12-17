@@ -12,17 +12,17 @@ function SingleArticle() {
     api
       .get(`/articles/${article_id}`)
       .then((response) => {
-        setArticle(response.data.article); // Assuming API returns article data as 'article'
-        setLoading(false);
+        setArticle(response.data.article)
+        setLoading(false)
       })
       .catch((err) => {
-        setError(err.message);
-        setLoading(false);
+        setError(err.message)
+        setLoading(false)
       });
-  }, [article_id]);
+  }, [article_id])
 
   if (loading) return <p>Loading article...</p>;
-  if (error) return <p>Error loading article: {error}</p>;
+  if (error) return <p>Error loading article: {error}</p>
 
   return (
     <div className="single-article">
